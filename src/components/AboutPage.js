@@ -1,40 +1,42 @@
-import React from 'react'
-import styled, { keyframes, ThemeProvider } from 'styled-components'
-import {DarkTheme} from './Themes';
-
+import React from 'react';
+import styled, { keyframes, ThemeProvider } from 'styled-components';
+import { DarkTheme } from './Themes';
 
 import LogoComponent from '../subComponents/LogoComponent';
 import SocialIcons from '../subComponents/SocialIcons';
 import PowerButton from '../subComponents/PowerButton';
 import ParticleComponent from '../subComponents/ParticleComponent';
-import BigTitle from '../subComponents/BigTitlte'
-import astronaut from '../assets/Images/spaceman.png'
+import BigTitle from '../subComponents/BigTitlte';
+import astronaut from '../assets/Images/spaceman.png';
+import Me from '../assets/Images/profile-img.png';
 
 const Box = styled.div`
-background-color: ${props => props.theme.body};
-width: 100vw;
-height:100vh;
-position: relative;
-overflow: hidden;
-`
-const float = keyframes`
-0% { transform: translateY(-10px) }
-50% { transform: translateY(15px) translateX(15px) }
-100% { transform: translateY(-10px) }
+  background-color: ${props => props.theme.body};
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+`;
 
-`
-const Spaceman = styled.div`
-position: absolute;
-top: 10%;
-right: 5%;
-width: 20vw;
-animation: ${float} 4s ease infinite;
-img{
+const float = keyframes`
+  0% { transform: translateY(-10px); }
+  50% { transform: translateY(15px) translateX(15px); }
+  100% { transform: translateY(-10px); }
+`;
+
+const MeImage = styled.div`
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 30vw; /* Increased width for a larger image */
+  animation: ${float} 4s ease infinite;
+  img {
     width: 100%;
     height: auto;
-}
-`
-const Main =  styled.div`
+  }
+`;
+
+const Main = styled.div`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
   padding: 2rem;
@@ -46,47 +48,39 @@ const Main =  styled.div`
   justify-content: center;
   align-items: center;
   font-size: calc(0.6rem + 1vw);
- backdrop-filter: blur(4px);
-  
+  backdrop-filter: blur(4px);
   position: absolute;
   left: calc(5rem + 5vw);
   top: 10rem;
   font-family: 'Ubuntu Mono', monospace;
   font-style: italic;
-`
-
-
-
+`;
 
 const AboutPage = () => {
-    return (
-        <ThemeProvider theme={DarkTheme}>
-<Box>
+  return (
+    <ThemeProvider theme={DarkTheme}>
+      <Box>
+        <LogoComponent theme='dark' />
+        <SocialIcons theme='dark' />
+        <PowerButton />
+        <ParticleComponent theme='dark' />
 
-<LogoComponent theme='dark'/>
-<SocialIcons theme='dark'/>
-<PowerButton />
-<ParticleComponent theme='dark' />
+        <MeImage>
+          <img className="pic" src={Me} alt="Profile Pic" />
+        </MeImage>
 
-        <Spaceman>
-            <img src={astronaut} alt="spaceman" />
-        </Spaceman>    
         <Main>
-        I'm a front-end developer located in India. I love to create simple yet beautiful websites with great user experience.
-<br /> <br/>
-I'm interested in the whole frontend stack Like trying new things and building great projects. I'm an independent freelancer and blogger. I love to write blogs and read books.
-<br/> <br/>
-I believe everything is an Art when you put your consciousness in it. You can connect with me via social links.
+          I’m a Pre-Final Year student at RIT and an emerging front-end developer passionate about building modern, scalable web solutions. My journey in web development is driven by a desire to create impactful and user-friendly websites.
+          <br /><br />
+          I have developed a solid foundation in HTML, CSS, and Tailwind CSS, which I further enhanced with JavaScript and jQuery. Recently, I've been diving into the React framework and exploring the advanced features of Next.js, particularly its Server-Side Rendering and API Routes capabilities.
+          <br /><br />
+          I believe that creativity and attention to detail are essential for crafting exceptional user experiences.
         </Main>
 
         <BigTitle text="ABOUT" top="10%" left="5%" />
+      </Box>
+    </ThemeProvider>
+  );
+};
 
-
-        </Box>
-
-        </ThemeProvider>
-        
-    )
-}
-
-export default AboutPage
+export default AboutPage;

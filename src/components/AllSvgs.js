@@ -1,22 +1,21 @@
 export const PowerBtn = (props) => {
   return (
-    <svg
+<svg
       aria-hidden="true"
       data-prefix="fas"
-      data-icon="power-off"
-      className="prefix__svg-inline--fa prefix__fa-power-off prefix__fa-w-16"
+      data-icon="arrow-left"
+      className="prefix__svg-inline--fa prefix__fa-arrow-left prefix__fa-w-8"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 512 512"
+      viewBox="0 0 256 512"
       {...props}
     >
       <path
         fill={props.fill}
-        d="M400 54.1c63 45 104 118.6 104 201.9 0 136.8-110.8 247.7-247.5 248C120 504.3 8.2 393 8 256.4 7.9 173.1 48.9 99.3 111.8 54.2c11.7-8.3 28-4.8 35 7.7L162.6 90c5.9 10.5 3.1 23.8-6.6 31-41.5 30.8-68 79.6-68 134.9-.1 92.3 74.5 168.1 168 168.1 91.6 0 168.6-74.2 168-169.1-.3-51.8-24.7-101.8-68.1-134-9.7-7.2-12.4-20.5-6.5-30.9l15.8-28.1c7-12.4 23.2-16.1 34.8-7.8zM296 264V24c0-13.3-10.7-24-24-24h-32c-13.3 0-24 10.7-24 24v240c0 13.3 10.7 24 24 24h32c13.3 0 24-10.7 24-24z"
+        d="M31.4 233.4l118.4-118.4c9.4-9.4 24.6-9.4 34.1 0l10.2 10.2c9.4 9.4 9.4 24.6 0 34.1L75.1 256l100.6 100.6c9.4 9.4 9.4 24.6 0 34.1l-10.2 10.2c-9.4 9.4-24.6 9.4-34.1 0L31.4 266.9c-9.4-9.4-9.4-24.6 0-34.1z"
       />
     </svg>
-  )
+  );
 }
-
 export const Github = (props) => {
     return (
         <svg
@@ -175,6 +174,18 @@ export const Design = (props) => {
   )
 
 }
+export const LinkedIn = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={props.width}
+    height={props.height}
+    fill={props.fill}
+    viewBox="0 0 24 24"
+  >
+    <path d="M19 0H5C2.238 0 0 2.238 0 5v14c0 2.762 2.238 5 5 5h14c2.762 0 5-2.238 5-5V5c0-2.762-2.238-5-5-5zM7.5 19H4.5v-11h3v11zm-1.5-12.25c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2zm14 12.25h-3v-5.5c0-1.309-.315-2.488-1.388-2.488-1.023 0-1.57.71-1.83 1.395-.094.227-.117.54-.117.857v5.736h-3v-11h3v1.491c.39-.6 1.09-1.491 2.511-1.491 1.827 0 3 1.257 3 3.953v7.047z" />
+  </svg>
+);
+
 
 export const Develope = (props) => { 
   return (
