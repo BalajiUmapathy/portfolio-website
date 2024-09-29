@@ -8,6 +8,7 @@ import SocialIcons from '../subComponents/SocialIcons';
 import { YinYang } from './AllSvgs';
 import Intro from './Intro';
 
+
 const MainContainer = styled.div`
   background: ${props => props.theme.body};
   width: 100vw;
@@ -140,6 +141,8 @@ const PopupModal = ({ closePopup }) => {
   );
 };
 
+const resumeLink = "https://drive.google.com/uc?id=10SeZ5r6bCk06_O7Z0GzTpFwBlPXOz8U9";
+
 const Main = () => {
   const [click, setClick] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
@@ -173,23 +176,22 @@ const Main = () => {
           <span>click here</span>
         </Center>
 
-        <Contact target="_blank" href="mailto:codebucks27@gmail.com">
-          <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: 'spring', duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: 'spring', duration: 1.5, delay: 1 },
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Contact
-          </motion.h2>
+        <Contact target="_blank" href={resumeLink} rel="noopener noreferrer">
+    <motion.h2
+        initial={{
+            y: -200,
+            transition: { type: 'spring', duration: 1.5, delay: 1 },
+        }}
+        animate={{
+            y: 0,
+            transition: { type: 'spring', duration: 1.5, delay: 1 },
+        }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+    >
+        Resume
+    </motion.h2>
         </Contact>
-
         <FEATURES to="/features">
           <motion.h2
             initial={{
