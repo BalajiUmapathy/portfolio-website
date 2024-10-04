@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import LogoComponent from '../subComponents/LogoComponent';
@@ -8,7 +8,6 @@ import SocialIcons from '../subComponents/SocialIcons';
 import { YinYang } from './AllSvgs';
 import Intro from './Intro';
 
-
 const MainContainer = styled.div`
   background: ${props => props.theme.body};
   width: 100vw;
@@ -16,7 +15,7 @@ const MainContainer = styled.div`
   overflow: hidden;
   position: relative;
 
-  h2,h3,h4,h5,h6{
+  h2, h3, h4, h5, h6 {
     font-family: 'Karla', sans-serif;
     font-weight: 500;
   }
@@ -39,7 +38,7 @@ const FEATURES = styled(NavLink)`
   color: ${props => props.theme.text};
   position: absolute;
   top: 50%;
-  right: calc(1rem + 2vw);
+  right: calc(1rem + .5vw);
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
@@ -123,40 +122,12 @@ const DarkDiv = styled.div`
   transition: height 0.5s ease, width 1s ease 0.5s;
 `;
 
-// New Code for Mobile Detection and Popup
-const PopupModal = ({ closePopup }) => {
-  return (
-    <div className="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white p-8 rounded-lg shadow-lg relative max-w-sm mx-auto text-center">
-        <h2 className="text-2xl mb-4 font-bold">Switch to Desktop/Laptop</h2>
-        <p>This website is not optimized for mobile devices. Please view it on a desktop or laptop for the best experience.</p>
-        <button
-          onClick={closePopup}
-          className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-800"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  );
-};
-
 const resumeLink = "https://drive.google.com/uc?id=10SeZ5r6bCk06_O7Z0GzTpFwBlPXOz8U9";
 
 const Main = () => {
   const [click, setClick] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
 
   const handleClick = () => setClick(!click);
-
-  // Detect Mobile Screen
-  useEffect(() => {
-    if (window.innerWidth < 768) {
-      setShowPopup(true);
-    }
-  }, []);
-
-  const closePopup = () => setShowPopup(false);
 
   return (
     <MainContainer>
@@ -177,21 +148,22 @@ const Main = () => {
         </Center>
 
         <Contact target="_blank" href={resumeLink} rel="noopener noreferrer">
-    <motion.h2
-        initial={{
-            y: -200,
-            transition: { type: 'spring', duration: 1.5, delay: 1 },
-        }}
-        animate={{
-            y: 0,
-            transition: { type: 'spring', duration: 1.5, delay: 1 },
-        }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-    >
-        Resume
-    </motion.h2>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: 'spring', duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: 'spring', duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Resume
+          </motion.h2>
         </Contact>
+
         <FEATURES to="/features">
           <motion.h2
             initial={{
@@ -262,9 +234,6 @@ const Main = () => {
           </SKILLS>
         </BottomBar>
       </Container>
-
-      {/* Mobile Popup */}
-      {showPopup && <PopupModal closePopup={closePopup} />}
 
       {click ? <Intro click={click} /> : null}
     </MainContainer>

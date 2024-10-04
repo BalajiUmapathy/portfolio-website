@@ -16,6 +16,9 @@ const Box = styled.div`
   height: 100vh;
   position: relative;
   overflow: hidden;
+ display: flex;
+  justify-content: center;
+
 `;
 
 const float = keyframes`
@@ -39,8 +42,8 @@ const MeImage = styled.div`
 const Main = styled.div`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
-  padding: 2rem;
-  width: 50vw;
+  padding: 1.7rem;
+  width: 55vw;
   height: 60vh;
   z-index: 3;
   line-height: 1.5;
@@ -50,7 +53,7 @@ const Main = styled.div`
   font-size: calc(0.6rem + 1vw);
   backdrop-filter: blur(4px);
   position: absolute;
-  left: calc(5rem + 5vw);
+  left: calc(5rem + 1vw);
   top: 10rem;
   font-family: 'Ubuntu Mono', monospace;
   font-style: italic;

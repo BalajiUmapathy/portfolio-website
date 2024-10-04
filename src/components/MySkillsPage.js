@@ -17,15 +17,16 @@ const Box = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding:1rem;
 `
 
 const Main = styled.div`
   border: 2px solid ${props => props.theme.text};
   color: ${props => props.theme.text};
   background-color: ${props => props.theme.body};
-  padding: 2rem;
+  padding: 2.5rem;
   width: 30vw;
-  height: 60vh;
+  height: 65%;
   z-index: 3;
   line-height: 1.5;
   cursor: pointer;

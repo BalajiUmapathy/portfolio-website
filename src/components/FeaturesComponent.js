@@ -12,7 +12,6 @@ const Box = styled(motion.a)`
   backdrop-filter: blur(2px);
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
-
   display: flex;
   flex-direction: column;
   z-index: 5;
@@ -22,18 +21,28 @@ const Box = styled(motion.a)`
     background-color: ${(props) => props.theme.text};
     transition: all 0.3s ease;
   }
+
+  @media (max-width: 768px) {
+    height: 22rem; /* Adjust height for mobile */
+    width: 60%; /* Make it wider on mobile */
+    margin: 0 auto; /* Center it */
+  }
 `;
 
 const Image = styled.div`
   background-image: ${(props) => `url(${props.img})`};
   width: 100%;
-  height: 100%;
+  height: 70%; /* Adjust the height of the image */
   background-size: cover;
   border: 1px solid transparent;
   background-position: center center;
 
   ${Box}:hover & {
     border: 1px solid ${(props) => props.theme.body};
+  }
+
+  @media (max-width: 768px) {
+    height: 60%; /* Reduce the image height on mobile */
   }
 `;
 
@@ -47,6 +56,10 @@ const Title = styled.h3`
 
   ${Box}:hover & {
     border-bottom: 1px solid ${(props) => props.theme.body};
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem; /* Adjust title size for mobile */
   }
 `;
 

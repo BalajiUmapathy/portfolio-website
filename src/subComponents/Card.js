@@ -38,7 +38,7 @@ const CardFace = styled.div`
 const CardFront = styled(CardFace)`
   background-color: ${props => props.theme.text};
   color: ${props => props.theme.body};
-  padding: 1.5rem 2rem;
+  padding: 5rem 2rem;
   border: 1px solid ${props => props.theme.body};
   display: flex;
   flex-direction: column;
@@ -70,15 +70,16 @@ const CardBack = styled(CardFace)`
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  padding: 1.5rem 2rem;
+  padding: 5rem 2rem;
   border: 1px solid ${props => props.theme.text};
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 50%; /* Increased height for the image placeholder */
+  height: 80%; /* Increased height for the image placeholder */
   object-fit: cover; /* Ensures the image covers the area without distortion */
   border-radius: 0 50px 0 50px;
+  padding: 10px;
 `;
 
 const Tags = styled.div`
