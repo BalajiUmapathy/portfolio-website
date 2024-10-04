@@ -84,5 +84,8 @@ export const Work = [
         "demo": "https://simonsaysgamebybalaji.netlify.app/",
         "github": "https://github.com/BalajiUmapathy/final-simon-game",
         "imageUrl": "https://res.cloudinary.com/dx5alvq9t/image/upload/v1724080618/Screenshot_2024-08-19_204611_jhcqb0.png"
-    }
+    },
+    
+
+    
 ];
